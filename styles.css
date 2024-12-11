@@ -27,8 +27,8 @@ main{
 }
 
 li{
-    border-bottom: 1px solid #e7e7e9; 
-    padding: 5% 0 5%; 
+    border-bottom: 1px solid #e7e7e9;
+    cursor: pointer;
 }
 
 button{font-size: 12px;}
@@ -37,21 +37,26 @@ p{font-size: 11px;}
 
 li:nth-child(1){padding: 0 0 5% 0;}
 
-li:hover, li:active{ background-color: #D3D3D3;}
-
-li{
-    cursor: pointer;
+li:hover, li:active{
+    background-color: #e6e6e6;
 }
 
 .answer{
     overflow: hidden;
-    transition: maxHeight 0.3s ease;
+    transition: max-height 0.3s ease;
     max-height: 0;
 }
 
 li.active .answer{
     max-height: 300px;
 }
+
+.arrow{transition: transform 0.3s ease;}
+
+.arrow.rotate{transform: rotate(180deg);}
+
+.question.active{font-weight: bold;}
+.answer.active{color: hsl(0, 0%, 35%);}
 
 @media only screen and (min-width: 768px) and (max-width: 1024px){
     
@@ -65,7 +70,11 @@ li.active .answer{
 @media only screen and (min-width: 1024px){
     .desktop-section h1{padding: 0;}
 
-    .desktop-section li{
-        padding: 0;
+    .desktop-section li{padding: 0;}
+    .desktop-section li.active{
+        padding: 2% 0 2% ;
+    }
+    .desktop-section li:nth-child(1).active{
+        padding: 2% 0 2% ;
     }
 }
